@@ -1,1 +1,71 @@
+package tugasSDALinkedList;
+
+import java.util.LinkedList;
+
+public class LinkedListSatu {
+     public static void main(String[] args) {
+
+        
+        LinkedList <String> saya = new LinkedList<>();
+        LinkedList <String> saya1 = new LinkedList<>();
+
+        saya.add("A");
+        saya.add("F");
+        saya.add("I");
+        saya.add("V");
+        saya.add("A");
+        saya.add("_");
+        saya.add("N");
+        saya.add("E");
+        saya.add("Z");
+        saya.add("A");
+        saya.add("L");
+        saya.add("I");
+        saya.add("A");
+        saya.add("_");
+        saya.add("I");
+        saya.add("S");
+        saya.add("L");
+        saya.add("A");
+        saya.add("M");
+        saya.add("I");
+        System.out.println("Nama\t:" + saya + "\tUkuran : " + saya.size());
+
+        //menambah karakter
+        saya1.add("_");
+        saya1.add("A");
+        saya1.add("K");
+        saya1.add("I");
+        saya1.add("L");
+        saya1.add("A");
+        saya1.add("H");
+        saya.addAll(saya1);
+        System.out.println("Nama1\t:" + saya + "\tUkuran : " + saya.size());
+
+        //menimpa karakter
+        saya.set(3,"Y");
+        saya.set(6,"S");
+        saya.set(22,"Q");
+        System.out.println("Nama2\t:" + saya + "\tUkuran : " + saya.size());
+
+        //menghapus karakter
+        saya.remove(2);
+        saya.remove(5);
+        saya.remove(17);
+        saya.remove(23);
+        System.out.println("Nama3\t:" + saya + "\tUkuran : " + saya.size());
+
+        //fungsi PUSH
+        saya.push("Duchess");
+        System.out.println("Nama4\t:" + saya + "\tUkuran :" + saya.size());
+
+        //fungsi POP
+        saya.pop();
+        System.out.println("Nama5\t:" + saya+ "\tUkuran :" + saya.size());
+        
+
+
+        
+    }
+}
 

@@ -1,0 +1,121 @@
+package tugas3SDALinkedList;
+
+import java.util.LinkedList;
+
+public class LinkedListDua {
+
+    public static void main(String[] args) {
+
+        LinkedList <String> data1 = new LinkedList<>();
+        LinkedList <String> data2 = new LinkedList<>();
+        LinkedList <String> data3 = new LinkedList<>();
+
+
+        data1.add("Afiva");
+        data1.add("2111456783");
+        data1.add("Padang");
+
+        data2.add("Neza");
+        data2.add("2011876549");
+        data2.add("Payakumbuh");
+       
+        data3.add("Lia");
+        data3.add("2011290309");
+        data3.add("Bukittinggi");
+
+        System.out.println("Data Mahasiswa 1\t: " + data1);
+        System.out.println("Data Mahasiswa 2\t: " + data2);
+        System.out.println("Data Mahasiswa 3\t: " + data3);
+        System.out.println("");
+
+        //isEmpty
+        data1.isEmpty();
+        data2.isEmpty();
+        data3.isEmpty();
+        System.out.println("Apakah data 1 kosong?\t" + data1.isEmpty());
+        System.out.println("Apakah data 2 kosong?\t" + data2.isEmpty());
+        System.out.println("Apakah data 3 kosong\t" + data3.isEmpty());
+        System.out.println("");
+
+        //Fungsi remove
+        data1.remove(2);
+        data2.remove(2);
+        data3.remove(2);
+        System.out.println("Data Mahasiswa 1 (remove)\t: " + data1);
+        System.out.println("Data Mahasiswa 2 (remove)\t: " + data2);
+        System.out.println("Data Mahasiswa 3 (remove)\t: " + data3);
+        System.out.println("");
+
+        //fungsi set
+        data1.set(0,"Aliya");
+        data2.set(0,"Catherine");
+        data3.set(0,"Alice");
+
+        data1.set(1,"2109089793");
+        data2.set(1,"2099786889");
+        data3.set(1,"2019298767");
+        System.out.println("Data Mahasiswa 1 (set)\t: " + data1);
+        System.out.println("Data Mahasiswa 2 (set)\t: " + data2);
+        System.out.println("Data Mahasiswa 3 (set)\t: " + data3);
+        System.out.println("");
+
+        //fungsi push
+        data1.push("Kedokteran, ");
+        data2.push("Hukum, ");
+        data3.push("Kriminologi, ");
+        System.out.println("Data Mahasiswa 1 (push)\t: " + data1);
+        System.out.println("Data Mahasiswa 2 (push)\t: " + data2);
+        System.out.println("Data Mahasiswa 3 (push)\t: " + data3);
+        System.out.println("");
+
+        //fungsi pop
+        data1.pop();
+        data2.pop();
+        data3.pop();
+        System.out.println("Data Mahasiswa 1 (pop)\t: " + data1);
+        System.out.println("Data Mahasiswa 2 (pop)\t: " + data2);
+        System.out.println("Data Mahasiswa 3 (pop)\t: " + data3);
+        System.out.println("");
+
+        //GetFirst
+        System.out.println("Elemen Paling Atas (data mahasiswa 1)\t:" + data1.getFirst());
+        System.out.println("Elemen Paling Atas (data mahasiswa 2)\t:" + data2.getFirst());
+        System.out.println("Elemen Paling Atas (data mahasiswa 3)\t:" + data3.getFirst());
+        System.out.println("");
+        
+        //GetLast
+        System.out.println("Elemen Paling Bawah (data mahasiswa 1):" + data1.getLast());
+        System.out.println("Elemen Paling Bawah (data mahasiswa 2):" + data2.getLast());
+        System.out.println("Elemen Paling Bawah (data mahasiswa 3):" + data3.getLast());
+        System.out.println("");
+
+        //fungsi add
+        data1.add("Angkatan 21");
+        data2.add("Angkatan 20");
+        data3.add("Angkatan 20");
+        System.out.println("Data Mahasiswa 1\t:" + data1);
+        System.out.println("Data Mahasiswa 2\t:" + data2);
+        System.out.println("Data Mahasiswa 3\t:" + data3);
+        System.out.println("");
+
+        //get
+        System.out.println("Data indeks 2 (Mahasiswa 1)\t:" + data1.get(2));
+        System.out.println("Data indeks 2 (Mahasiswa 2)\t:" + data2.get(2));
+        System.out.println("Data indeks 2 (Mahasiswa 3)\t:" + data3.get(2));
+        System.out.println("");
+
+        //indexOf
+        System.out.println("Indeks '2109089793'    :" + data1.indexOf("2109089793"));
+        System.out.println("Indeks '2099786889'    :" + data2.indexOf("2099786889"));
+        System.out.println("Indeks '2019298767'    :" + data3.indexOf("2019298767"));
+        System.err.println("");
+
+        
+
+
+
+        
+
+    }
+    
+}

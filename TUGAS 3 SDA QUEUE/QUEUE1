@@ -1,0 +1,263 @@
+package tugasQueue;
+
+import java.util.Scanner;
+import java.util.concurrent.CountDownLatch;
+
+public class queueSatu {
+    int antrianPembayaran[];
+    int antrianMaterai[];
+    int antrianPengiriman[];
+    int capacity=5;
+    int front = 0;
+    int rear = -1;
+    int currentSize = 0;
+    int capacity1=5;
+    int capacity2=5;
+    int front1 = 0;
+    int rear1 = -1;
+    int front2 = 0;
+    int rear2 = -1;
+    int currentSize1 = 0;
+    int currentSize2 = 0;
+    int masukPembayaran=0;
+    int masukMaterai;
+    int masukPengiriman;
+
+
+    public queueSatu(int batas){
+        antrianPembayaran = new int[batas];  //batas antrian 'pembayaran'
+        antrianMaterai = new int[batas];    //batas antrian 'Materai'
+        antrianPengiriman = new int[batas]; //batas antrian 
+    }
+
+    public void tambahPembayaran(int item){
+        if (isPembayaran()){
+            System.out.println("Maaf antrian sudah penuh silahkan menunggu");
+        } else{
+            rear++;
+            antrianPembayaran[rear]=item;
+            currentSize++;
+            masukPembayaran++;
+            System.out.println(" "+item+" adalah nomor antrian Anda");
+        }
+    }
+
+    public void tambahMaterai(int item){
+        if (isMaterai()){
+            System.out.println("Maaf antrian sudah penuh silahkan menunggu");
+        } else{
+            rear1++;
+            antrianMaterai[rear1]=item;
+            currentSize1++;
+            masukMaterai++;
+            System.out.println(" "+item+" adalah nomor antrian Anda");
+        }
+    }
+
+    public void tambahPengiriman(int item){
+        if (isPengiriman()){
+            System.out.println("Maaf antrian sudah penuh silahkan menunggu");
+        } else{
+            rear1++;
+            antrianPengiriman[rear1]=item;
+            currentSize2++;
+            masukPengiriman++;
+            System.out.println(""+item+" adalah nomor antrian Anda");
+        }
+    }
+
+    public void panggilPembayaran(){
+        if(isPembayaranEmpty()){
+            System.out.println("Maaf antrian masih kosong");
+        } else{
+            currentSize--;
+            System.out.println("Nomor antrian Pembayaran :"+antrianPembayaran[front]+" Silahkan menuju loket pembayaran ");
+            int i=1;
+            while(i<masukPembayaran){
+                antrianPembayaran[i-1]=antrianPembayaran[i];
+                i++;
+            }
+            masukPembayaran--;
+            rear--;
+        }
+    }
+
+    public void panggilMaterai(){
+        if(isMateraiEmpty()){
+            System.out.println("Maaf antrian masih kosong");
+        } else{
+            currentSize1--;
+            System.out.println("Nomor antrian pembelian materai :"+antrianMaterai[front1]+" Silahkan menuju loket pembelian materai");
+            int i=1;
+            while(i<masukMaterai){
+                antrianMaterai[i-1]=antrianMaterai[i];
+                i++;
+            }
+            masukMaterai--;
+            rear1--;
+        }
+    }
+
+    public void panggilPengiriman(){
+        if(isPengirimanEmpty()){
+            System.out.println("Maaf antrian masih kosong");
+        } else{
+            currentSize1--;
+            System.out.println("Nomor antrian pengiriman :"+antrianPengiriman[front2]+" Silahkan menuju loket pengiriman");
+            int i=1;
+            while(i<masukPengiriman){
+                antrianPengiriman[i-1]=antrianPengiriman[i];
+                i++;
+            }
+            masukPengiriman--;
+            rear2--;
+        }
+    }
+
+
+    public boolean isPembayaran(){
+        boolean status = false;
+        if (currentSize == capacity){
+            status = true;
+        } return status;
+    }
+
+    public boolean isMaterai(){
+        boolean status = false;
+        if (currentSize1 == capacity1){
+            status = true;
+        } return status;
+    }
+
+    public boolean isPengiriman(){
+        boolean status = false;
+        if (currentSize2 == capacity2){
+            status = true;
+        } return status;
+    }
+
+    public boolean isPembayaranEmpty(){
+        boolean status = false;
+        if (currentSize == 0){
+            status = true;
+        } return status;
+    }
+
+    public boolean isMateraiEmpty(){
+        boolean status = false;
+        if (currentSize1 == 0){
+            status = true;
+        } return status;
+    }
+
+    public boolean isPengirimanEmpty(){
+        boolean status = false;
+        if (currentSize2 == 0){
+            status = true;
+        } return status;
+    }
+
+
+    public static void main(String[] args) {
+        Scanner pilih = new Scanner(System.in);
+        queueSatu queue = new queueSatu(5);
+        int finish=0;
+        int Pembayaran=0;
+        int masuk=0;
+        int Materai=0;
+        int masuk1=0;
+        int Pengiriman=0;
+        int masuk2=0;
+               
+        System.out.println("Selamat datang di Kantor Pos Taman Anggrek");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        do{
+            System.out.println("1. Ambil antrian loket pembayaran");
+            System.out.println("2. Ambil antrian loket pembelian materai");
+            System.out.println("3. Ambil antrian loket pengiriman barang");
+            System.out.println("4. Panggil antrian loket pembayaran");
+            System.out.println("5. Panggil antrian pembelian materai");
+            System.out.println("6. Panggil antiran pengiriman barang");
+            System.out.println("7. Keluar");
+            System.out.println("");
+            System.out.print("Silahkan masukkan menu pilihan: ");
+            int input = pilih.nextInt();
+
+            switch(input){
+                case 1:
+                    masuk++;
+                    if(masuk<6){
+                        Pembayaran++;
+                    }else{
+                        masuk--;
+                    }
+                    queue.tambahPembayaran(Pembayaran);
+                    
+                    System.out.println("");
+                    break;
+                
+                case 2:
+                    masuk1++;
+                    if(masuk1<=5){
+                        Materai++;
+                    }else{
+                        masuk1--;
+                    }
+                    queue.tambahMaterai(Materai);
+                    System.out.println("");
+                    break;
+
+                case 3:
+                    masuk2++;
+                    if(masuk2<=5){
+                        Pengiriman++;
+                    }else{
+                        masuk2--;
+                    }
+                    queue.tambahPengiriman(Pengiriman);
+                    System.out.println("");
+                    break;    
+                
+                case 4:
+                    queue.panggilPembayaran();
+                    System.out.println("");
+                    masuk--;
+                    break;
+
+                case 5:
+                    queue.panggilMaterai();
+                    System.out.println("");
+                    masuk1--;
+                    break;
+                
+                case 6:
+                    queue.panggilPengiriman();
+                    System.out.println("");
+                    masuk2--;
+                    break;
+
+                case 7:
+                    finish++;
+                    System.out.println("");
+                    break;
+                
+                default:
+                System.out.println("Pilihan tidak tersedia");
+
+            }
+
+        }while(finish==0);
+        
+
+
+
+    }
+
+
+    
+
+
+
+    
+
+}
